@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blushmi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login Page -->
+<section id="login-page" class="page active">
+  <div class="login-container">
+    <h2>Welcome to Blushmi</h2>
+    <input type="text" id="login-username" placeholder="Enter Username" required />
+    <input type="password" id="login-password" placeholder="Enter Password" required />
+    <button onclick="handleLogin()" class="login-btn">Login</button>
+    <p id="login-error" class="login-error"></p>
+  </div>
+</section>
+<div class="promo-banner" id="promo-banner">
+  🔥 Flat 50% OFF on Makeup Today Only! Use Code: GLAM50
+</div>
+
+
+  <nav>
+    <h1 class="logo">Blushmi</h1>
+    <ul>
+      
+
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#shop" class="nav-link">Shop</a></li>
+      <li><a href="#cart" class="nav-link">Cart</a></li>
+      <li><a href="#checkout" class="nav-link">Checkout</a></li>
+      
+
+    </ul>
+  </nav>
+
+  <div class="notification" id="notification"></div>
+
+  <!-- Homepage -->
+  <section id="home" class="page active">
+    <div class="slideshow">
+      <img src="https://ponds.in/cdn/shop/files/Home-Page-Main-Banner_best-seller_Desktop_2552x730_e8d92128-0aa5-4aa6-a596-10bd146dbeac.png?v=1720585271" class="slide active" />
+      <img src="https://img.freepik.com/free-vector/realistic-beauty-sale-banner-with-offer_52683-94987.jpg?semt=ais_hybrid&w=740" class="slide" />
+      <img src="https://i.pinimg.com/736x/d0/78/70/d078705c172a131d88c67bd19986172d.jpg" class="slide" />
+      <img src="https://png.pngtree.com/template/20220330/ourmid/pngtree-micro-space-fashion-simple-small-fresh-women-s-shoes-poster-banner-image_906294.jpg" class="slide" />
+    </div>
+  <div class="features">
+  <div class="feature-box">
+    <h3>🚚 Free Delivery</h3>
+    <p>Enjoy free shipping on all orders above ₹499!</p>
+    <p>We ensure fast and reliable delivery to your doorstep across India. You can track your orders easily and get updates in real time.</p>
+  </div>
+  <div class="feature-box">
+    <h3>🎁 Exclusive Offers</h3>
+    <p>Access Nykaa-style deals and discounts tailored just for you.</p>
+    <p>Sign up to receive early access to seasonal sales, beauty combos, and limited-time discounts on bestsellers every week!</p>
+  </div>
+  <div class="feature-box">
+    <h3>💄 Trusted Brands</h3>
+    <p>Shop from 100% authentic and premium beauty & fashion brands.</p>
+    <p>We source directly from brand owners and authorized distributors to ensure you get genuine, high-quality products every time.</p>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- Shop Page -->
+  <section id="shop" class="page">
+    <input type="text" id="search-input" placeholder="Search products..." />
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="makeup">Makeup</button>
+      <button class="filter-btn" data-filter="skincare">Skincare</button>
+      <button class="filter-btn" data-filter="dresses">Dresses</button>
+      <button class="filter-btn" data-filter="sandals">Sandals</button>
+      <select id="sort-select">
+        <option value="">Sort by</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+    </div>
+    <div id="product-list" class="product-grid"></div>
+  </section>
+
+ <!-- Cart Page -->
+<section id="cart" class="page">
+  <h2>Your Cart</h2>
+  <div id="cart-items"></div>
+  <h3>Total: ₹<span id="cart-total">0</span></h3>
+  <button id="proceed-btn" class="myb">Proceed to Payment</button> <!-- ✅ Added -->
+</section>
+
+
+
+ <!-- Checkout Page -->
+<section id="checkout" class="page">
+  <h2>Checkout</h2>
+  <form id="checkout-form">
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email" required />
+    <input type="tel" placeholder="Phone Number" required pattern="[0-9]{10}" />
+    <input type="text" placeholder="Address Line 1" required />
+    <input type="text" placeholder="Address Line 2 (Optional)" />
+    <input type="text" placeholder="City" required />
+    <input type="text" placeholder="State" required />
+    <input type="text" placeholder="Pincode" required pattern="[0-9]{6}" />
+    <input type="text" placeholder="Landmark (Optional)" />
+    <button type="submit">Place Order</button>
+  </form>
+</section>
+
+
+
+
+
+
+  <!-- Modal -->
+  <div id="thank-you-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Thank you for your purchase! 💖</h2>
+      <p>Your order has been placed successfully.</p>
+      <button onclick="closeModal()" class="checkb">Close</button>
+    </div>
+  </div>
+
+  <div id="product-modal" class="modal hidden">
+  <div class="modal-content product-popup">
+    <span class="close-btn" onclick="closeProductModal()">×</span>
+    <img id="modal-img" src="" alt="Product Image" />
+    <h3 id="modal-name"></h3>
+    <p id="modal-price"></p>
+    <p id="modal-description">This is a premium product from GlamourHub’s top-rated collection. Enjoy exclusive quality and performance.</p>
+    <button id="modal-cart-btn" class="add-btn">Add to Cart</button>
+    <button id="modal-wishlist-btn" class="wishlist">❤ Wishlist</button>
+  </div>
+</div>
+  
+
+
+  <script src="script.js"></script>
+  <button id="backToTop" title="Go to top">↑</button>
+
+
+
+</body>
+</html>
